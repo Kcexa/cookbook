@@ -1,0 +1,9 @@
+{
+    "extends": "tslint-config-airbnb",
+    "rules": {
+        // added 4-size tabs
+        "ter-indent": [true, 4, { "SwitchCase": 1 }],
+        // added "allow-pascal-case" for functional components
+        "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"]
+    }
+}
