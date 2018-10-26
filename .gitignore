@@ -1,0 +1,13 @@
+# IDEs
+.idea/
+.vscode/
+
+# Modules
+node_modules/
+
+# Configs
+
+# Others
+public/scripts/
+docs/
+.firebase/
