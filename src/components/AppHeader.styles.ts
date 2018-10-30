@@ -1,14 +1,32 @@
 import { createStyles, Theme } from '@material-ui/core';
 import { fade } from '@material-ui/core/styles/colorManipulator';
+import { drawerWidth } from './AppMenu.styles';
 
 export default (theme: Theme) =>
     createStyles({
         grow: {
             flexGrow: 1,
         },
+        appBar: {
+            transition: theme.transitions.create(['margin', 'width'], {
+                easing: theme.transitions.easing.sharp,
+                duration: theme.transitions.duration.leavingScreen,
+            }),
+        },
+        appBarShift: {
+            width: `calc(100% - ${drawerWidth}px)`,
+            marginLeft: drawerWidth,
+            transition: theme.transitions.create(['margin', 'width'], {
+                easing: theme.transitions.easing.easeOut,
+                duration: theme.transitions.duration.enteringScreen,
+            }),
+        },
         menuButton: {
             marginLeft: -12,
             marginRight: 20,
+        },
+        hide: {
+            display: 'none',
         },
         search: {
             position: 'relative',
