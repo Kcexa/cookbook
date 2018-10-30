@@ -1,4 +1,5 @@
 import * as React from 'react';
+import translations from '../translations';
 
 export interface HelloProps {
     compiler: string;
@@ -22,10 +23,8 @@ export const sum = (a: number, b: number) => {
  */
 const Hello = (props: HelloProps) => (
     <>
-        <h1>
-            Hello from {props.compiler} and {props.framework}!
-        </h1>
-        <h3>I can add numbers. Check it out: 1 + 2 = {`${sum(1, 2)}`}</h3>
+        <h1>{translations.helloFrom(props.compiler, props.framework)}</h1>
+        <h3>{`${translations.iCanAddNumbers} ${translations.checkItOut} 1 + 2 = ${sum(1, 2)}`}</h3>
     </>
 );
 
