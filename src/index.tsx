@@ -7,6 +7,12 @@ import store from './store';
 import { env } from './configuration';
 import { config } from './firebase';
 
+declare global {
+    interface Window {
+        store: any;
+    }
+}
+
 const app = firebase.initializeApp(config);
 
 if (env !== 'production') {
