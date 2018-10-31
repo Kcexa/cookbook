@@ -18,6 +18,7 @@ declare global {
 const app = firebase.initializeApp(config);
 if (env !== 'production') {
     window.firebase = app;
+    window.store = store;
 }
 
 /**

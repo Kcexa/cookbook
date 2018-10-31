@@ -1,19 +1,19 @@
+import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core/styles';
 import * as React from 'react';
-import { withStyles, createStyles, WithStyles, Theme } from '@material-ui/core/styles';
 import AppHeader from '../components/AppHeader';
 import AppMenu from '../components/AppMenu';
 
 const styles = (theme: Theme) => createStyles({});
 
-export interface AppProps extends WithStyles<typeof styles> {}
-export interface AppState {
+export interface IAppProps extends WithStyles<typeof styles> {}
+export interface IAppState {
     openMenu: boolean;
 }
 
 /**
  * Main layouts of the App
  */
-class App extends React.Component {
+class App extends React.Component<IAppProps, IAppState> {
     state = {
         openMenu: false,
     };
@@ -24,7 +24,7 @@ class App extends React.Component {
     };
 
     render() {
-        const { openMenu }: AppState = this.state;
+        const { openMenu }: IAppState = this.state;
         return (
             <>
                 <AppHeader handleMenuOpen={this.toggleMenu} isMenuOpen={openMenu} />

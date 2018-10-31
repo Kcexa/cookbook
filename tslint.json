@@ -1,6 +1,6 @@
 {
     "defaultSeverity": "error",
-    "extends": ["tslint-plugin-prettier", "tslint-config-prettier", "tslint-config-airbnb"],
+    "extends": ["tslint-react", "tslint-eslint-rules", "tslint-config-prettier", "tslint-config-airbnb"],
     "rules": {
         "prettier": ["always", ".prettierrc.js"],
         // added 4-size tabs
@@ -8,7 +8,10 @@
         // added "allow-pascal-case" for functional components
         "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
         "max-line-length": [true, 120],
-        "import-name": false
+        // import name shouldn't be as filename
+        "import-name": false,
+        // "strict-bound-class-methods" for arrow functions ; in classes
+        "semicolon": [true, "always", "strict-bound-class-methods"]
     },
     "rulesDirectory": ["tslint-plugin-prettier"]
 }

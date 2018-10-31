@@ -9,6 +9,4 @@ const theme = (colorScheme = defaultColorScheme) =>
         typography: typography(),
     });
 
-export type themeType = typeof theme;
-
 export default theme;
