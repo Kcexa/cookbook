@@ -1,16 +1,21 @@
 import { lighten, darken } from '@material-ui/core/styles/colorManipulator';
 
-const palette: Function = ({
-    primary,
-    secondary,
-    error,
-    text,
-}: {
+export interface IPaletteSet {
     primary: string;
     secondary: string;
     error: string;
     text: string;
-}): Object => ({
+}
+
+declare module '@material-ui/core/styles/createMuiTheme' {
+    interface PaletteOptions {}
+}
+
+export default ({ primary, secondary, error, text }: IPaletteSet) => ({
+    type: 'light',
+    common: {
+        white: '#ffffff',
+    },
     primary: {
         light: lighten(primary, 0.85),
         main: primary,
@@ -30,5 +35,3 @@ const palette: Function = ({
         contrastText: text,
     },
 });
-
-export default palette;
