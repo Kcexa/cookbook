@@ -1,4 +1,8 @@
 import { combineReducers } from 'redux';
+import themes from './themes';
 
-const allReducers = {};
+export const allReducers = {
+    themes,
+};
+
 export default combineReducers(allReducers);
