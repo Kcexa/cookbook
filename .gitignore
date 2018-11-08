@@ -11,3 +11,9 @@ node_modules/
 public/scripts/
 docs/
 .firebase/
+
+public/index\.bundle\.js
+
+public/index\.bundle\.js\.map
+
+public/index\.html

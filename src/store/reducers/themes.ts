@@ -7,7 +7,7 @@ interface IAction {
     payload: any;
 }
 interface IAllUiThemes {
-    [key:string]: IPaletteSet;
+    [key: string]: IPaletteSet;
 }
 
 export interface IThemes {

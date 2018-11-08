@@ -8,7 +8,7 @@ module.exports = {
     },
     devtool: 'source-map',
     output: {
-        path: path.join(__dirname, '/public', '/scripts'),
+        path: path.join(__dirname, '/public'),
         filename: '[name].bundle.js',
     },
     module: {
@@ -37,6 +37,10 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'source-map-loader',
             },
+            {
+                test: /\.(jpe|jpg|woff|woff2|eot|ttf|svg|png)(\?.*$|$)/,
+                loader: 'url-loader?limit=100000',
+            },
         ],
     },
     resolve: {
@@ -50,4 +54,13 @@ module.exports = {
             template: './src/index.html',
         }),
     ],
+    devServer: {
+        contentBase: path.join(__dirname, 'public'),
+        compress: true,
+        hot: true,
+        port: process.env.PORT || 8080,
+        historyApiFallback: {
+            index: 'index.html'
+        }
+    }
 };

@@ -13,9 +13,7 @@ interface StateFromProps {
 }
 interface DispatchFromProps {}
 
-interface IAppProps extends WithStyles<typeof styles> {
-    themes: IThemes;
-}
+interface IAppProps extends StateFromProps, WithStyles<typeof styles> {}
 interface IAppState {
     openMenu: boolean;
 }
